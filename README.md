@@ -4,17 +4,17 @@ Control YouTube playback using hand gestures detected from webcam in real-time.
 
 ## Features
 
-- Open Palm → Play
-- Fist → Pause
-- Index + Middle → Volume Up
-- Ring + Pinky → Volume Down
-- All Except Pinky → Previous Video
-- Pinky Only → Next Video
+👋 Play / Pause by showing Open Palm or Fist.
 
-✅ Smooth Gesture Confirmation (no flickering)
-✅ Swipe Left = Next Video → 'l'
-✅ Swipe Right = Previous Video → 'j'
-✅ Cool visual Progress Bar growing with time
+👉✌️ Volume Control with two-finger gestures.
+
+🤚🖐️ Skip Forward 10s with Pinky Only gesture.
+
+✋🤏 Go Back 10s with All Fingers Except Pinky gesture.
+
+🔊 Voice Feedback: System speaks recognized gestures.
+
+🚀 Real-time performance with gesture smoothing and cooldown handling.
 
 ## Tech Stack
 
@@ -22,6 +22,7 @@ Control YouTube playback using hand gestures detected from webcam in real-time.
 - OpenCV
 - MediaPipe
 - PyAutoGUI
+- pyttsx3 (for text-to-speech)
 
 ## How to Run
 
@@ -39,40 +40,3 @@ Control YouTube playback using hand gestures detected from webcam in real-time.
    ```bash
    python main.py
    ```
-
-## Next Steps
-
-- Add swipe gesture recognition
-- Custom gesture training module
-
-main.py
-Handles:
-
-webcam input (OpenCV)
-
-hand tracking (MediaPipe)
-
-overlays (cv2.putText)
-
-gesture detection calls
-
-gestures.py
-Handles:
-
-detection of gesture based on hand landmark positions
-
-returns which action to perform (play, pause, etc.)
-
-utils.py
-Handles:
-
-checking finger states
-
-implementing cooldown timers
-
-config.py
-Holds:
-
-gesture cooldown settings
-
-screen resolution constants, key mappings
